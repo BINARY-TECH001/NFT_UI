@@ -1,3 +1,5 @@
+import DetailsBid from "./DetailsBid";
+import DetailsDesc from "./DetailsDesc";
 import FocusedStatusbar from "./FocusedStatusbar";
 import HomeHeader from "./HomeHeader";
 import NFTCard from "./NFTCard";
@@ -8,5 +10,7 @@ export {
     NFTCard,
     FocusedStatusbar,
     CircleButton,
-    RectButton
+    RectButton,
+    DetailsBid,
+    DetailsDesc,
 }
