@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, SafeAreaView, Text, View } from "react-native";
+import { FlatList, Image, SafeAreaView, Text, View } from "react-native";
 import { CircleButton, DetailsBid, FocusedStatusbar, RectButton } from "../components";
 import { COLORS, SHADOWS, SIZES } from "../constants";
 
@@ -30,9 +30,28 @@ function Details({ route, navigation }) {
         renderItem={({ item }) => <DetailsBid bid={item} />}
         keyExtractor={(item)=> item.id}
         showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: SIZES.extraLarge }}
+        ListHeaderComponent={()=> (
+          <React.Fragment>
+            <DetailsHeader data={data} navigation={navigation}/>
+          </React.Fragment>
+        )}
       />
     </SafeAreaView>
   )
 }
+
+const DetailsHeader = ({ data, navigation }) =>(
+  <View style={{ width: '100%', height: 373 }}>
+    <Image 
+      source={data.image}
+      resizeMode="cover"
+      style={{
+        width: '100%',
+        height: '100%'
+      }}
+    />
+  </View>
+)
 
 export default  Details 
