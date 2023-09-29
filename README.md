@@ -6,7 +6,7 @@
 
 **Tutorial Project**
 
-[Image of NFT Marketplace app]
+![NFT_UI Screenshot](./src/assets/NFT_UI.png)
 
 **Project Description:**
 
