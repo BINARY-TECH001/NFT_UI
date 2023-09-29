@@ -4,6 +4,7 @@ import FocusedStatusbar from "./FocusedStatusbar";
 import HomeHeader from "./HomeHeader";
 import NFTCard from "./NFTCard";
 import { CircleButton, RectButton } from "./Button";
+import { SubInfo } from "./SubInfo";
 
 export {
     HomeHeader,
@@ -13,4 +14,5 @@ export {
     RectButton,
     DetailsBid,
     DetailsDesc,
+    SubInfo,
 }
