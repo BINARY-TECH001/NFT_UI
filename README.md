@@ -6,7 +6,7 @@
 
 **Tutorial Project**
 
-![NFT_UI Screenshot](./src/assets/NFT_UI.png)
+![NFT_UI Screenshot](./assets/NFT_UI.png)
 
 **Project Description:**
 
