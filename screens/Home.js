@@ -1,10 +1,22 @@
-import React from "react";
-import { FlatList, SafeArea, Text, View } from "react-native";
+import React, { useState } from "react";
+import { FlatList, SafeArea, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { FocusedStatusbar, HomeHeader, NFTCard } from "../components";
 import { COLORS, NFTData } from "../constants";
 
 function Home() {
+    const [nftData, setNftData] = useState(NFTData)
+
+    const handleSearch = (value) =>{
+        if (!value.length) return setNftData(NFTData);
+        const filteredData = NFTData.filter((item) => item.name.toLowerCase().includes(value.toLowerCase()));
+
+        if (filteredData.length){
+            setNftData(filteredData)
+        } else {
+            setNftData(NFTData)
+        }
+    }
   return (
     <SafeAreaView style={{ flex: 1 }}>
         <FocusedStatusbar baackground={COLORS.primary } />
@@ -12,11 +24,11 @@ function Home() {
         <View style={{ flex: 1 }} >
             <View style={{ zIndex:0 }} >
                 <FlatList 
-                    data={NFTData}
+                    data={nftData}
                     renderItem={({ item }) => <NFTCard data={item} />}
                     keyExtractor={(item)=> item.id}
                     showsVerticalScrollIndicator={false}
-                    ListHeaderComponent={<HomeHeader />}
+                    ListHeaderComponent={<HomeHeader onSearch={handleSearch} />}
                 />
             </View>
 
