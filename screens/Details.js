@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList, Image, SafeAreaView, StatusBar, Text, View } from "react-native";
 import { CircleButton, DetailsBid, DetailsDesc, FocusedStatusbar, RectButton, SubInfo } from "../components";
-import { COLORS, SHADOWS, SIZES, assets } from "../constants";
+import { COLORS, FONTS, SHADOWS, SIZES, assets } from "../constants";
 
 function Details({ route, navigation }) {
   const { data } = route.params;
@@ -37,6 +37,16 @@ function Details({ route, navigation }) {
             <SubInfo />
             <View style={{ padding: SIZES.font }}>
               <DetailsDesc data={data} />
+              
+              { data.bids.length > 0 && (
+                <Text style={{
+                  fontSize: SIZES.font,
+                  fontFamily: FONTS.semiBold,
+                  color: COLORS.primary,
+                }}>
+                  Current Bids
+                </Text>
+              ) }
             </View>
           </React.Fragment>
         )}
